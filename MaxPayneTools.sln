@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxPayneTools", "MaxPayneTools\MaxPayneTools.csproj", "{AB00F1B5-BB35-49E1-9A66-D4085EF1F876}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxPayneTools.CLI", "MaxPayneTools.CLI\MaxPayneTools.CLI.csproj", "{5F1D79DB-6F1D-4394-B3D0-2E598CE3AB55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB00F1B5-BB35-49E1-9A66-D4085EF1F876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB00F1B5-BB35-49E1-9A66-D4085EF1F876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB00F1B5-BB35-49E1-9A66-D4085EF1F876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB00F1B5-BB35-49E1-9A66-D4085EF1F876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1D79DB-6F1D-4394-B3D0-2E598CE3AB55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1D79DB-6F1D-4394-B3D0-2E598CE3AB55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1D79DB-6F1D-4394-B3D0-2E598CE3AB55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1D79DB-6F1D-4394-B3D0-2E598CE3AB55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
