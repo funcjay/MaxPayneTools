@@ -1,0 +1,31 @@
+namespace MaxPayneTools.DataTypes;
+
+public enum DataTypeTags {
+    Long = 0x00,
+    ULong = 0x01,
+    Short = 0x04,
+    UShort = 0x05,
+    Char = 0x06,
+    SChar = 0x07,
+    UChar = 0x08,
+    Float4 = 0x09,
+    Double = 0x0A,
+    Bool = 0x0E,
+    Int4 = 0x02,
+    Int3 = 0x12,
+    Int2 = 0x13,
+    Int1 = 0x14,
+    UInt4 = 0x03,
+    UInt3 = 0x0F,
+    UInt2 = 0x10,
+    UInt1 = 0x11,
+    Vector2 = 0x15,
+    Vector3 = 0x16,
+    Vector4 = 0x17,
+    Float2 = 0x26,
+    String = 0x0D,
+    Matrix2X2 = 0x18,
+    Matrix3X3 = 0x19,
+    Matrix4X3 = 0x1A,
+    Matrix4X4 = 0x1B
+}
