@@ -8,7 +8,9 @@ public static class BinaryReaderExtensions {
     }
 
     public static DataType ReadDataType(this BinaryReader br) {
+        Console.WriteLine($"DEBUG: pos = {br.BaseStream.Position:X}");
         var type = (DataTypeTags)br.ReadByte();
+        Console.WriteLine($"DEBUG: got type {type}");
         
         return type switch {
             DataTypeTags.Long => new DataTypeLong(br),

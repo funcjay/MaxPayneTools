@@ -5,6 +5,7 @@ using MaxPayneTools.Util;
 namespace MaxPayneTools.Files;
 
 public class Mp1Ldb : Readable {
+    public byte[] FileHeader;
     public BspContainer Bsp;
     public int FileVersion;
     public MaterialContainer Materials;
@@ -21,6 +22,9 @@ public class Mp1Ldb : Readable {
     public List<Room>? Rooms;
 
     public Mp1Ldb(BinaryReader br) : base(br) {
+        this.FileHeader = br.ReadBytes(4);
+        Console.WriteLine($"DEBUG: file header = {BitConverter.ToInt32(this.FileHeader)}");
+        
         this.Bsp = new BspContainer(br);
         this.FileVersion = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Materials = new MaterialContainer(br);

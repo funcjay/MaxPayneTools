@@ -38,9 +38,8 @@ public static class Program {
         
         var ldb = new Mp1Ldb(br);
 
-        Console.WriteLine($"DEBUG: ldb.FileVersion = {ldb.FileVersion}");
+        Console.WriteLine($"ldb.FileVersion = {ldb.FileVersion}");
 
         br.Close();
-        file.Close();
     }
 }
