@@ -10,7 +10,7 @@ public class MaterialProperty : Readable {
     public MaterialProperty(BinaryReader br) : base(br) {
         this.CategoryName = br.Read<DataTypeString>().Value;
 
-        var matCount = br.Read<DataTypeInt>().Value;
+        var matCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         for (var i = 0; i < matCount; i++) {
             this.Materials?.Add(new Material(br));
         }

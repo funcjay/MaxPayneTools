@@ -11,14 +11,14 @@ public class AnimationGraph : Readable {
     public float[] CurveControlPoint;
 
     public AnimationGraph(BinaryReader br) : base(br) {
-        this.Header = br.Read<DataTypeInt>().Value;
-        this.MajorVer = br.Read<DataTypeInt>().Value;
-        this.MinorVer = br.Read<DataTypeInt>().Value;
-        this.SampleRate = br.Read<DataTypeInt>().Value;
+        this.Header = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.MajorVer = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.MinorVer = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.SampleRate = br.ReadSpecificDataType<DataTypeInt>().Value;
 
         this.CurveControlPoint = new float[this.SampleRate];
         for (var i = 0; i < this.SampleRate; i++) {
-            this.CurveControlPoint[i] = br.Read<DataTypeFloat>().Value;
+            this.CurveControlPoint[i] = br.ReadSpecificDataType<DataTypeFloat>().Value;
         }
     }
 }

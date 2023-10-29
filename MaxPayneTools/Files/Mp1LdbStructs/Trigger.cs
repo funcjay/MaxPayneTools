@@ -12,7 +12,7 @@ public class Trigger : Readable {
 
     public Trigger(BinaryReader br) : base(br) {
         this.EntProperties = new EntityProperties(br);
-        this.Radius = br.Read<DataTypeFloat>().Value;
-        this.Type = br.Read<DataTypeInt>().Value;
+        this.Radius = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.Type = br.ReadSpecificDataType<DataTypeInt>().Value;
     }
 }

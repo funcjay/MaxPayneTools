@@ -9,6 +9,7 @@ public static class BinaryReaderExtensions {
 
     public static DataType ReadDataType(this BinaryReader br) {
         var type = (DataTypeTags)br.ReadByte();
+        
         return type switch {
             DataTypeTags.Long => new DataTypeLong(br),
             DataTypeTags.ULong => new DataTypeULong(br),
@@ -37,7 +38,13 @@ public static class BinaryReaderExtensions {
             DataTypeTags.Matrix3X3 => new DataTypeMatrix3X3(br),
             DataTypeTags.Matrix4X3 => new DataTypeMatrix4X3(br),
             DataTypeTags.Matrix4X4 => new DataTypeMatrix4X4(br),
-            _ => throw new ArgumentOutOfRangeException()
+            _ => throw new ArgumentOutOfRangeException(nameof(type), $"Received unknown data type \"{type.ToString()}\"")
         };
+    }
+    
+    public static T ReadSpecificDataType<T>(this BinaryReader br) where T : DataType {
+        var val = br.ReadDataType();
+        if (val is not T casted) throw new InvalidDataException();
+        return casted;
     }
 }

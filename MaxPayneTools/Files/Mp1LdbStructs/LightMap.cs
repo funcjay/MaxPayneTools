@@ -10,9 +10,9 @@ public class LightMap : Readable {
     public byte[] FileData;
 
     public LightMap(BinaryReader br) : base(br) {
-        this.Id = br.Read<DataTypeInt>().Value;
-        this.FileType = br.Read<DataTypeUInt>().Value;
-        this.FileSize = br.Read<DataTypeInt>().Value;
+        this.Id = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.FileType = br.ReadSpecificDataType<DataTypeUInt>().Value;
+        this.FileSize = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.FileData = br.ReadBytes(this.FileSize);
     }
 }

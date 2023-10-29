@@ -11,13 +11,13 @@ public class PointLight : Readable {
     public float Intensity;
 
     public PointLight(BinaryReader br) : base(br) {
-        this.Id = br.Read<DataTypeInt>().Value;
+        this.Id = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.EntProperties = new EntityProperties(br);
-        this.R = br.Read<DataTypeFloat>().Value;
-        this.G = br.Read<DataTypeFloat>().Value;
-        this.B = br.Read<DataTypeFloat>().Value;
-        this.A = br.Read<DataTypeFloat>().Value;
-        this.Falloff = br.Read<DataTypeFloat>().Value;
-        this.Intensity = br.Read<DataTypeFloat>().Value;
+        this.R = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.G = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.B = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.A = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.Falloff = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.Intensity = br.ReadSpecificDataType<DataTypeFloat>().Value;
     }
 }

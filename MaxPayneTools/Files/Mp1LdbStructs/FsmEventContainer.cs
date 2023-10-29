@@ -9,7 +9,7 @@ public class FsmStateSwitchEventContainer : Readable {
     public FsmStateSwitchEventContainer(BinaryReader br) : base(br) {
         br.ReadByte(); // Type tag
 
-        var eventCount = br.Read<DataTypeInt>().Value;
+        var eventCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         for (var i = 0; i < eventCount; i++) {
             this.StateSwitchEvents?.Add(new FsmStateSwitchEvent(br));
         }

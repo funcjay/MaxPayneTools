@@ -11,8 +11,8 @@ public class Texture : Readable {
 
     public Texture(BinaryReader br) : base(br) {
         this.SourceFileName = br.Read<DataTypeString>().Value;
-        this.FileType = br.Read<DataTypeUInt>().Value;
-        this.FileSize = br.Read<DataTypeInt>().Value;
+        this.FileType = br.ReadSpecificDataType<DataTypeUInt>().Value;
+        this.FileSize = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.FileData = br.ReadBytes(this.FileSize);
     }
 }

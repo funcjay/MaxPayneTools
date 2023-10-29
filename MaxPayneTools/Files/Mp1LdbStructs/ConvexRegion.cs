@@ -8,10 +8,10 @@ public class ConvexRegion : Readable {
 
     public ConvexRegion(BinaryReader br) : base(br) {
         br.ReadByte(); // Type tag
-        var pointCount = br.Read<DataTypeInt>().Value;
+        var pointCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Points = new int[pointCount];
         for (var i = 0; i < pointCount; i++) {
-            this.Points[i] = br.Read<DataTypeInt>().Value;
+            this.Points[i] = br.ReadSpecificDataType<DataTypeInt>().Value;
         }
     }
 }

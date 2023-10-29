@@ -17,15 +17,15 @@ public class Polygon : Readable {
     public int SmoothingGroup;
 
     public Polygon(BinaryReader br) : base(br) {
-        this.Id = br.Read<DataTypeInt>().Value;
-        this.TexVertStartId = br.Read<DataTypeInt>().Value;
-        this.VertCount = br.Read<DataTypeInt>().Value;
+        this.Id = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.TexVertStartId = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.VertCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Normal = br.Read<DataTypeVector3>().Value;
-        this.EngineMaterialType = br.Read<DataTypeUInt>().Value;
-        this.MaterialId = br.Read<DataTypeInt>().Value;
-        this.LightMapId = br.Read<DataTypeInt>().Value;
-        this.MaxEdgeLength = br.Read<DataTypeFloat>().Value;
-        this.MaxAngle = br.Read<DataTypeFloat>().Value;
-        this.SmoothingGroup = br.Read<DataTypeInt>().Value;
+        this.EngineMaterialType = br.ReadSpecificDataType<DataTypeUInt>().Value;
+        this.MaterialId = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.LightMapId = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.MaxEdgeLength = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.MaxAngle = br.ReadSpecificDataType<DataTypeFloat>().Value;
+        this.SmoothingGroup = br.ReadSpecificDataType<DataTypeInt>().Value;
     }
 }

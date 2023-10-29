@@ -16,7 +16,7 @@ public class EntityProperties : Readable {
         this.Name = br.Read<DataTypeString>().Value;
         this.ObjectToRoomTransform = br.Read<DataTypeMatrix4X3>().Value;
         this.ObjectToParentTransform = br.Read<DataTypeMatrix4X3>().Value;
-        this.RoomId = br.Read<DataTypeInt>().Value;
+        this.RoomId = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.ParentDynamicMeshName = br.Read<DataTypeString>().Value;
     }
 }

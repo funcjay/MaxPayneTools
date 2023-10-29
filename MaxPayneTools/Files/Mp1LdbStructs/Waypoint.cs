@@ -9,6 +9,6 @@ public class Waypoint : Readable {
 
     public Waypoint(BinaryReader br) : base(br) {
         this.EntProperties = new EntityProperties(br);
-        this.Type = br.Read<DataTypeInt>().Value;
+        this.Type = br.ReadSpecificDataType<DataTypeInt>().Value;
     }
 }

@@ -9,7 +9,7 @@ public class FsmOnEvent : Readable {
     public FsmOnEvent(BinaryReader br) : base(br) {
         br.ReadByte(); // Type tag
 
-        var msgCount = br.Read<DataTypeInt>().Value;
+        var msgCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Messages = new string[msgCount];
         for (var i = 0; i < msgCount; i++) {
             this.Messages[i] = br.Read<DataTypeString>().Value;

@@ -13,10 +13,10 @@ public class BspPolygon : Readable {
     public Vector3 Pivot;
 
     public BspPolygon(BinaryReader br) : base(br) {
-        this.StartBspVertId = br.Read<DataTypeInt>().Value;
-        this.NumVertsInPoly = br.Read<DataTypeInt>().Value;
-        this.PolyIdInGroup = br.Read<DataTypeInt>().Value;
-        this.GroupId = br.Read<DataTypeInt>().Value;
+        this.StartBspVertId = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.NumVertsInPoly = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.PolyIdInGroup = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.GroupId = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Normal = br.Read<DataTypeVector3>().Value;
         this.Pivot = br.Read<DataTypeVector3>().Value;
     }

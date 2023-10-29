@@ -9,12 +9,12 @@ public class StaticMeshContainer : Readable {
 
     public StaticMeshContainer(BinaryReader br) : base(br) {
         br.ReadByte(); // Type tag
-        var texVertCount = br.Read<DataTypeInt>().Value;
+        var texVertCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         for (var i = 0; i < texVertCount; i++) {
             this.TextureVertices?.Add(new TextureVertex(br));
         }
 
-        var staticMeshCount = br.Read<DataTypeInt>().Value;
+        var staticMeshCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         for (var j = 0; j < staticMeshCount; j++) {
             this.Meshes?.Add(new StaticMesh(br));
         }

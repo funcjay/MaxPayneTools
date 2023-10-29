@@ -14,7 +14,7 @@ public class DataTypeInt : DataType {
                 var startAt = finBytes.Length - bytes.Length;
                 Array.Copy(bytes, 0, finBytes, startAt, bytes.Length);
 
-                this.Value = Convert.ToInt32(finBytes);
+                this.Value = BitConverter.ToInt32(finBytes);
                 break;
             }
             case 2:
@@ -26,7 +26,7 @@ public class DataTypeInt : DataType {
                 var startAt = finBytes.Length - bytes.Length;
                 Array.Copy(bytes, 0, finBytes, startAt, bytes.Length);
 
-                this.Value = Convert.ToInt32(finBytes);
+                this.Value = BitConverter.ToInt32(finBytes);
                 break;
             }
         }

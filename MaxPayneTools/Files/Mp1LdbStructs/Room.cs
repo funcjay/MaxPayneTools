@@ -20,17 +20,17 @@ public class Room : Readable {
     public BspUnknown BspUnk;
 
     public Room(BinaryReader br) : base(br) {
-        this.Id = br.Read<DataTypeInt>().Value;
+        this.Id = br.ReadSpecificDataType<DataTypeInt>().Value;
 
         for (var i = 0; i < 10; i++) {
             br.ReadByte(); // Type tag
-            var count = br.Read<DataTypeInt>().Value;
+            var count = br.ReadSpecificDataType<DataTypeInt>().Value;
 
             switch (i) {
                 default: {
                     this.StaticMeshIds = new int[count];
                     for (var j = 0; j < count; j++) {
-                        this.StaticMeshIds[j] = br.Read<DataTypeInt>().Value;
+                        this.StaticMeshIds[j] = br.ReadSpecificDataType<DataTypeInt>().Value;
                     }
 
                     break;
@@ -102,7 +102,7 @@ public class Room : Readable {
                 case 9: {
                     this.PointLightIds = new int[count];
                     for (var j = 0; j < count; j++) {
-                        this.PointLightIds[j] = br.Read<DataTypeInt>().Value;
+                        this.PointLightIds[j] = br.ReadSpecificDataType<DataTypeInt>().Value;
                     }
 
                     break;
@@ -111,7 +111,7 @@ public class Room : Readable {
         }
 
         this.Name = br.Read<DataTypeString>().Value;
-        this.AiNetDensity = br.Read<DataTypeFloat>().Value;
+        this.AiNetDensity = br.ReadSpecificDataType<DataTypeFloat>().Value;
         this.BspUnk = new BspUnknown(br);
     }
 }

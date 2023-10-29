@@ -14,7 +14,7 @@ public class Animation : Readable {
 
     public Animation(BinaryReader br) : base(br) {
         this.Name = br.Read<DataTypeString>().Value;
-        this.LengthInSeconds = br.Read<DataTypeFloat>().Value;
+        this.LengthInSeconds = br.ReadSpecificDataType<DataTypeFloat>().Value;
         this.StartTransform = br.Read<DataTypeMatrix4X3>().Value;
         this.EndTransform = br.Read<DataTypeMatrix4X3>().Value;
         this.Fsm = new AnimationFsm(br);

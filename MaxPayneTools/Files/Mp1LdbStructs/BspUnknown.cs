@@ -7,9 +7,9 @@ public class BspUnknown : Readable {
     public int Unk1, Unk2, Unk3, Unk4;
 
     public BspUnknown(BinaryReader br) : base(br) {
-        this.Unk1 = br.Read<DataTypeInt>().Value;
-        this.Unk2 = br.Read<DataTypeInt>().Value;
-        this.Unk3 = br.Read<DataTypeInt>().Value;
-        this.Unk4 = br.Read<DataTypeInt>().Value;
+        this.Unk1 = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.Unk2 = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.Unk3 = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.Unk4 = br.ReadSpecificDataType<DataTypeInt>().Value;
     }
 }

@@ -9,7 +9,7 @@ public class InitialRadiosity : Readable {
     public Vector3 Value;
 
     public InitialRadiosity(BinaryReader br) : base(br) {
-        this.Key = br.Read<DataTypeInt>().Value;
+        this.Key = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Value = br.Read<DataTypeVector3>().Value;
     }
 }

@@ -9,8 +9,8 @@ public class BspNodeHalfSpace : Readable {
     public int NextBspNode;
 
     public BspNodeHalfSpace(BinaryReader br) : base(br) {
-        this.StartIdInBspPolygonId = br.Read<DataTypeInt>().Value;
-        this.PolyCountInSpace = br.Read<DataTypeInt>().Value;
-        this.NextBspNode = br.Read<DataTypeInt>().Value;
+        this.StartIdInBspPolygonId = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.PolyCountInSpace = br.ReadSpecificDataType<DataTypeInt>().Value;
+        this.NextBspNode = br.ReadSpecificDataType<DataTypeInt>().Value;
     }
 }

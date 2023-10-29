@@ -10,12 +10,12 @@ public class DynamicMeshContainer : Readable {
     public DynamicMeshContainer(BinaryReader br) : base(br) {
         br.ReadByte(); // Type tag
 
-        var texVertCount = br.Read<DataTypeInt>().Value;
+        var texVertCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         for (var i = 0; i < texVertCount; i++) {
             this.TextureVertices?.Add(new TextureVertex(br));
         }
 
-        var meshCount = br.Read<DataTypeInt>().Value;
+        var meshCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         for (var j = 0; j < meshCount; j++) {
             this.Meshes?.Add(new DynamicMesh(br));
         }

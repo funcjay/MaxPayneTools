@@ -10,7 +10,7 @@ public class FsmStateContainer : Readable {
     public FsmStateContainer(BinaryReader br) : base(br) {
         br.ReadByte(); // Type tag
 
-        var stateCount = br.Read<DataTypeInt>().Value;
+        var stateCount = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.StateNames = new string[stateCount];
         for (var i = 0; i < stateCount; i++) {
             this.StateNames[i] = br.Read<DataTypeString>().Value;

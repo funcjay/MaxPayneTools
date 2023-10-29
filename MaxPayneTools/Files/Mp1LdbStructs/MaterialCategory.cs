@@ -9,7 +9,7 @@ public class MaterialCategory : Readable {
     public string MaterialName;
 
     public MaterialCategory(BinaryReader br) : base(br) {
-        this.MaterialId = br.Read<DataTypeInt>().Value;
+        this.MaterialId = br.ReadSpecificDataType<DataTypeInt>().Value;
         br.ReadByte(); // Type tag
         this.Name = br.Read<DataTypeString>().Value;
         this.MaterialName = br.Read<DataTypeString>().Value;

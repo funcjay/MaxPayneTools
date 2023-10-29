@@ -12,6 +12,6 @@ public class SortedMaterialCategory : Readable {
         br.ReadByte(); // Type tag
         this.Name = br.Read<DataTypeString>().Value;
         this.MaterialName = br.Read<DataTypeString>().Value;
-        this.MaterialId = br.Read<DataTypeInt>().Value;
+        this.MaterialId = br.ReadSpecificDataType<DataTypeInt>().Value;
     }
 }

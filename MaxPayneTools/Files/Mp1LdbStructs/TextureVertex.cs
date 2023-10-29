@@ -12,10 +12,10 @@ public class TextureVertex : Readable {
     public bool Smooth;
 
     public TextureVertex(BinaryReader br) : base(br) {
-        this.VertId = br.Read<DataTypeInt>().Value;
+        this.VertId = br.ReadSpecificDataType<DataTypeInt>().Value;
         this.Uv = br.Read<DataTypeVector2>().Value;
         this.LightMapUv = br.Read<DataTypeVector2>().Value;
-        this.Flags = br.Read<DataTypeUInt>().Value;
+        this.Flags = br.ReadSpecificDataType<DataTypeUInt>().Value;
         this.Smooth = br.Read<DataTypeBool>().Value;
     }
 }
