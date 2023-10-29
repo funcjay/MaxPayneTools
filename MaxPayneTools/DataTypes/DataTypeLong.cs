@@ -1,4 +1,4 @@
-namespace MaxPayneTools.DataTypes; 
+namespace MaxPayneTools.DataTypes;
 
 public class DataTypeLong : DataType {
     public int Value;

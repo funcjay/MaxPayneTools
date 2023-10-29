@@ -5,10 +5,11 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MaxPayneTools\MaxPayneTools.csproj" />
+        <ProjectReference Include="..\MaxPayneTools\MaxPayneTools.csproj"/>
     </ItemGroup>
 
 </Project>
